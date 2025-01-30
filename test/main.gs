@@ -21,4 +21,4 @@ proc tick {
     if f3d_prism_face("Cat", mouse_x(), "") {
         stamp;
     }
-}
+}   
