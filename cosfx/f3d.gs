@@ -97,6 +97,16 @@ func f3d(cost, xd, yd) {
     return stp;
 }
 
+func f3d_prism_face(cost, xd, yd) {
+    # Apply a fisheye 3D stretch. Returns whether to stamp or not
+    if $xd > "" {
+        local stp = f3d_stretch_wh($cost, cos($xd), "", $xd % 360 > 180);
+    } elif $yd > "" {
+        local stp = f3d_stretch_wh($cost, "", cos($yd), $yd % 360 > 180);
+    }
+    return stp * check_draw_at_rot($xd + $yd);
+}
+
 proc f3d_prism pos p, cost, xd, yd, layer_count, depth {
     local i = 0;
     repeat $layer_count{
