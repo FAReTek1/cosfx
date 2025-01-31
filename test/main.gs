@@ -14,11 +14,11 @@ proc tick {
 
     RESET_POS;
     set_brightness_effect -100;
-    f3d_prism my_pos(), "Cat", mouse_x(), "", 15, 10;
+    f3d_prism my_pos(), "Cat", -3 * mouse_x(), "", 15, 10;
     
     clear_graphic_effects;
     RESET_POS;
-    if f3d_prism_face("Cat", mouse_x(), "") {
+    if f3d_prism_face("Cat", -3 * mouse_x(), "") {
         stamp;
     }
 }   
